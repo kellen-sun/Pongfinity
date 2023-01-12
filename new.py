@@ -25,7 +25,7 @@ font = pygame.font.SysFont('FreeMono, Monospace', 60)
 def randombounce(sx, sy):
     global speed
     angle = math.atan2(sx,sy)
-    dangle = random.uniform(-0.1, 0.1)
+    dangle = random.uniform(-0.08, 0.08)
     angle += dangle
     y = speed*math.cos(angle)
     x = speed*math.sin(angle)
@@ -78,7 +78,7 @@ while not gameOver:
     pygame.draw.rect(dis, white, pygame.Rect(paddlex1, paddley1, paddlesizex, paddlesizey))
     pygame.draw.rect(dis, white, pygame.Rect(paddlex2, paddley2, paddlesizex, paddlesizey))
     pygame.draw.circle(dis, white, (ballx, bally), ballsize)
-    dis.blit(font.render(str(point1), False, white), (sizex//2-30, 0))
-    dis.blit(font.render(str(point2), False, white), (sizex//2+30, 0))
+    dis.blit(font.render(str(point1), False, white), (sizex//2-60, 0))
+    dis.blit(font.render(str(point2), False, white), (sizex//2+60, 0))
     pygame.time.Clock().tick(30)
     pygame.display.flip()
