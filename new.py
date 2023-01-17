@@ -65,12 +65,14 @@ while not gameOver:
     #points and scoring
     if ballx-ballsize<0:
         point2 += 1
+        startingplayer = random.randint(0,1)
         angle = random.randint(-45+180*startingplayer, 45+180*startingplayer)
         ballx, bally, ballsize = 800, 450, 25
         speedx, speedy = speed*math.cos(math.radians(angle)), speed*math.sin(math.radians(angle))
     if ballx+ballsize>sizex:
         point1 += 1
         ballx, bally, ballsize = 800, 450, 25
+        startingplayer = random.randint(0,1)
         angle = random.randint(-45+180*startingplayer, 45+180*startingplayer)
         speed+=1
         speedx, speedy = speed*math.cos(math.radians(angle)), speed*math.sin(math.radians(angle))
