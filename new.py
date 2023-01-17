@@ -16,7 +16,9 @@ ballx, bally, ballsize = 800, 450, 25
 speed = 25
 point1 = 0
 point2 = 0
-angle = random.randint(0, 359)
+#make it less likely so that it starts up and down
+startingplayer = random.randint(0,1)
+angle = random.randint(-45+180*startingplayer, 45+180*startingplayer)
 speedx, speedy = speed*math.cos(math.radians(angle)), speed*math.sin(math.radians(angle))
 white = (255, 255, 255)
 font = pygame.font.SysFont('FreeMono, Monospace', 60)
@@ -63,13 +65,13 @@ while not gameOver:
     #points and scoring
     if ballx-ballsize<0:
         point2 += 1
-        angle = random.randint(0, 359)
+        angle = random.randint(-45+180*startingplayer, 45+180*startingplayer)
         ballx, bally, ballsize = 800, 450, 25
         speedx, speedy = speed*math.cos(math.radians(angle)), speed*math.sin(math.radians(angle))
     if ballx+ballsize>sizex:
         point1 += 1
         ballx, bally, ballsize = 800, 450, 25
-        angle = random.randint(0, 359)
+        angle = random.randint(-45+180*startingplayer, 45+180*startingplayer)
         speed+=1
         speedx, speedy = speed*math.cos(math.radians(angle)), speed*math.sin(math.radians(angle))
 
